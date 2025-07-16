@@ -7,8 +7,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
-import tkinter as tk
-from tkinter import filedialog
+# tkinter imports removed for headless execution
 import scipy.stats as stats
 import statsmodels.formula.api as smf
 from scipy.stats import pearsonr, ttest_ind, f_oneway, ks_2samp, chi2_contingency, wasserstein_distance
@@ -32,9 +31,8 @@ output_path = "analysis_outputs.xlsx"
 output_dir = "plots"
 
 # 📂 Excel dosyası seç
-root = tk.Tk()
-root.withdraw()
-file_path = filedialog.askopenfilename(title="Select Excel file", filetypes=[("Excel files", "*.xlsx *.xls")])
+# Use the sample data file directly
+file_path = "health_data_sample.xlsx"
 
 # 📥 Veriyi oku
 df_real = pd.read_excel(file_path, sheet_name=0)
